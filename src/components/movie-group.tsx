@@ -1,6 +1,11 @@
-import { MovieCardTitle, MovieCardTitle2 } from "@/components/moviecard";
+import { Movie, MovieCard, MovieCardTitle2 } from "@/components/movie-card";
 
-export function MovieGroup({ title, list, cols, className }) {
+const gridCols = {
+  6: "grid-cols-6",
+  8: "grid-cols-8",
+};
+
+export function MovieGroup({ title, list, cols = 8, className }: { title: string, list: Movie[], cols: number, className?: string }) {
   return (
     <div
       className={`my-3 bg-white border-solid border-2 border-gray-300 ${className}`}
@@ -13,16 +18,16 @@ export function MovieGroup({ title, list, cols, className }) {
           SEMUA
         </button>
       </div>
-      <div className={`m-3 grid grid-cols-${cols} gap-2`}>
+      <div className={`m-3 grid ${gridCols[cols]} gap-2`}>
         {list.map((movie) => (
-          <MovieCardTitle className="" data={movie} />
+          <MovieCard key={null} data={movie} />
         ))}
       </div>
     </div>
   );
 }
 
-export function MovieGroup2({ title, list, cols, className }) {
+export function MovieGroup2({ title, list, cols = 8, className }: { title: string, list: Movie[], cols?: number, className?: string }) {
   return (
     <div
       className={`my-3 bg-white border-solid border-2 border-gray-300 pb-4 relative ${className}`}
@@ -34,7 +39,7 @@ export function MovieGroup2({ title, list, cols, className }) {
       </div>
       <div className={`m-3 grid grid-cols-${cols} gap-2`}>
         {list.map((movie) => (
-          <MovieCardTitle2 className="" data={movie} />
+          <MovieCardTitle2 key={null} className="" data={movie} />
         ))}
       </div>
       <div

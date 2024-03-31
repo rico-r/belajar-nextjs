@@ -1,6 +1,7 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export function NavTab({ text, icon, className }) {
+export function NavTab({ text, icon, className = "" }: { text: string, icon: IconProp, className?: string }) {
   return (
     <div className={"inline-block p-2 text-white hover:bg-orange-400"}>
       <FontAwesomeIcon

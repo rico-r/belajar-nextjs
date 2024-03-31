@@ -10,7 +10,7 @@ library.add(fas);
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "LayarTV",
+  title: "MovieKita",
   description: "Website saya",
 };
 

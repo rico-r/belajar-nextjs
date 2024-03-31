@@ -1,4 +1,4 @@
-export function NavItem({ href, text }) {
+export function NavItem({ href, text }: { href: string, text: string }) {
   return (
     <a
       href={href}
